@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        {% load static %}
-        <link href="{% static 'blog/post_list.css' %}" rel="stylesheet" type="text/css">
-        <!-- <script src="script.js" type="text/javascript"> -->
-        </script>
-    </head>
-    <body>
-        <h1>Post List</h1>
-        
-        {% for post in posts %}
-        <div>
-            <h1><a href="#">{{post.title}}</a></h1>
-            <p>published: {{post.published_date}}</p>
-            <p>{{post.text|linebreaksbr}}</p>
-        </div>
-        {% endfor %}
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1 style="text-align: center;">Post List</h1>
+
+{% for post in posts %}
+<div>
+    <h1 class="title"><a href="#">{{post.title}}</a></h1>
+    <p class="date">published: {{post.published_date}}</p>
+    <p class="text">{{post.text|linebreaksbr}}</p>
+</div>
+{% endfor %}
+{% endblock %}
