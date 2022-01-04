@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <!-- <link href="style.css" rel="stylesheet" type="text/css">
-        <script src="script.js" type="text/javascript"> -->
+        {% load static %}
+        <link href="{% static 'blog/post_list.css' %}" rel="stylesheet" type="text/css">
+        <!-- <script src="script.js" type="text/javascript"> -->
         </script>
     </head>
     <body>
@@ -12,8 +13,8 @@
         
         {% for post in posts %}
         <div>
-            <p>published: {{post.published_date}}</p>
             <h1><a href="#">{{post.title}}</a></h1>
+            <p>published: {{post.published_date}}</p>
             <p>{{post.text|linebreaksbr}}</p>
         </div>
         {% endfor %}
