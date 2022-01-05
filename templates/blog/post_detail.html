@@ -1,12 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<h1 style="text-align: center;">Post List</h1>
-
-{% for post in posts %}
-<div>
-    <h1 class="title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+<div class="post">
+    <h1 class="title">{{post.title}}</h1>
     <p class="date">published: {{post.published_date}}</p>
     <p class="text">{{post.text|linebreaksbr}}</p>
 </div>
-{% endfor %}
 {% endblock %}
