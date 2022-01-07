@@ -2,7 +2,7 @@
 {% block content %}
 <div class="post">
     <h1 class="title">{{post.title}}</h1>
-    <p class="date">published: {{post.published_date}}</p>
+    <p class="date">published: {{post.published_date}}</p><a href="{% url 'post_edit' pk=post.pk %}">edit</a>
     <p class="text">{{post.text|linebreaksbr}}</p>
 </div>
 {% endblock %}

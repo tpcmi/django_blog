@@ -24,3 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = 'blog.views.page_404'
+handler500 = 'blog.views.page_500'
